@@ -11,6 +11,11 @@ from app.config import Settings, get_settings
 COOKIE_PATH = "/"
 
 
+def _cookie_samesite(settings: Settings) -> str:
+    """Cross-site frontends (e.g. Render UI → Render API) need SameSite=None + Secure."""
+    return "none" if settings.cookie_secure else "lax"
+
+
 def set_session_cookie(
     response: Response,
     token: str,
@@ -25,7 +30,7 @@ def set_session_cookie(
         value=token,
         httponly=True,
         secure=settings.cookie_secure,
-        samesite="lax",
+        samesite=_cookie_samesite(settings),
         max_age=max_age,
         expires=expires_at,
         path=COOKIE_PATH,
@@ -43,7 +48,7 @@ def clear_session_cookie(
         path=COOKIE_PATH,
         httponly=True,
         secure=settings.cookie_secure,
-        samesite="lax",
+        samesite=_cookie_samesite(settings),
     )
 
 
