@@ -1,0 +1,4 @@
+# Root tooling (policy ingest). Prefer backend/requirements.txt for the API.
+-r backend/requirements.txt
+sentence-transformers>=3.0.0
+torch>=2.0.0
