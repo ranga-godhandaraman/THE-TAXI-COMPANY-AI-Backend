@@ -256,7 +256,7 @@ async def estimate_journey_fare(
     session: AsyncSession,
     request: JourneyEstimateRequest,
     *,
-    engine: pricingengine | None = None,
+    engine: PricingEngine | None = None,
 ) -> JourneyEstimateResult:
     """Convenience entrypoint for the deterministic pricing engine."""
     return await (engine or PricingEngine()).estimate(session, request)
