@@ -6,7 +6,6 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 
-import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy import select
 
