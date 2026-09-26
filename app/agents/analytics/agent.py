@@ -45,7 +45,6 @@ Return JSON only:
 }}
 
 Guidance:
-- "unusually high/low", "abnormal", "why is availability low", "anomaly" → availability_anomaly or demand_anomaly
 - "largest demand/supply gap" → demand_supply_gap
 - "busiest hours" / peak → peak_hours
 - "compare ... London and Manchester" → city_comparison with cities list
