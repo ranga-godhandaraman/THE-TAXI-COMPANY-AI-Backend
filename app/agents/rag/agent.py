@@ -48,7 +48,7 @@ Rules:
 2. If CONTEXT is insufficient, set grounded=false and answer exactly:
    "The available knowledge base does not contain enough information to answer this question."
 3. When grounded=true, write a clear answer in British English and cite source file names
-   in parentheses, e.g. (taxi_vs_phv.md).
+   in parentheses
 4. Do not answer operational/live fleet questions (counts, averages, revenue). If the
    question is operational, set grounded=false and say it requires operational database data.
 5. Do not mention Qdrant, embeddings, or internal systems.
