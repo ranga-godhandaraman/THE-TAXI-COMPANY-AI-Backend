@@ -21,8 +21,5 @@ class RetrievalResponse(BaseModel):
     top_k: int | None = None
 
 
-class RagSearchRequest(BaseModel):
-    query: str = Field(..., min_length=1)
-    top_k: int = Field(default=5, ge=1, le=50)
-    filters: dict[str, Any] | None = None
+
 
