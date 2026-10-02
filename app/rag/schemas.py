@@ -26,7 +26,3 @@ class RagSearchRequest(BaseModel):
     top_k: int = Field(default=5, ge=1, le=50)
     filters: dict[str, Any] | None = None
 
-
-class RagSearchResponse(BaseModel):
-    query: str
-    results: list[RetrievalHit]
